@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.EmpMapper">
+
+
+<!--    &lt;!&ndash;查询操作&ndash;&gt;-->
+<!--    <select id="list" resultType="com.example.demo.mapper.EmpMapper">-->
+<!--        select * from emp-->
+<!--        where name like concat('%',#{name},'%')-->
+<!--        and gender = #{gender}-->
+<!--        and entrydate between #{begin} and #{end}-->
+<!--        order by update_time desc-->
+<!--    </select>-->
+
+
+
+</mapper>
