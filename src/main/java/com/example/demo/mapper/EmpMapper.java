@@ -3,6 +3,9 @@ package com.example.demo.mapper;
 import com.example.demo.Pojo.Emp;
 import org.apache.ibatis.annotations.*;
 
+import java.time.LocalDate;
+import java.util.List;
+
 /*@Mapper注解：表示当前接口为mybatis中的Mapper接口
   程序运行时会自动创建接口的实现类对象(代理对象)，并交给Spring的IOC容器管理
 */
@@ -46,4 +49,21 @@ public interface EmpMapper {
     //dept_id、create_time、update_time实体类属性名和数据库表查询返回的字段名不一致，不能自动封装。需要起别名或者驼峰命名
     @Select("select id, username, password, name, gender, image, job, entrydate, dept_id as deptId, create_time as createTime, update_time as updateTime from emp where id=#{id}")
     public Emp getById(Integer id);
+
+
+    @Select("select * from emp " +
+            "where name like concat('%',#{name},'%') " +
+            "and gender = #{gender} " +
+            "and entrydate between #{begin} and #{end} " +
+            "order by update_time desc")
+    public List<Emp> list(String name, Short gender, LocalDate begin, LocalDate end);
+
+
+//    //删除@Update注解编写的SQL语句
+//    //update操作的SQL语句编写在Mapper映射文件中
+//    public void update(Emp emp);
+//
+
+
+
 }

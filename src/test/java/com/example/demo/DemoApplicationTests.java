@@ -83,4 +83,9 @@ class DemoApplicationTests {
 		System.out.println(emp);
 	}
 
+	//性别数据为null、开始时间和结束时间也为null
+
+
+
+
 }
